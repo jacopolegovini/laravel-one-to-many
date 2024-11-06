@@ -79,7 +79,6 @@
                                                 <th scope="col">Title</th>
                                                 <th scope="col">Author</th>
                                                 <th scope="col">Date</th>
-                                                <th scope="col">Priority</th>
                                                 <th scope="col">Description</th>
                                             </tr>
                                         </thead>
@@ -103,9 +102,6 @@
                                                 </td>
                                                 <td>
                                                     {{ $project->date }}
-                                                </td>
-                                                <td>
-                                                    {{ $project->priority }}
                                                 </td>
                                                 <td>
                                                     {{ $project->description }}

@@ -31,15 +31,6 @@
                 <input type="text" class="form-control" id="date" name="date" value="{{old('date')}}">
             </div>
             <div class="mb-3">
-                <label for="project-priority" class="form-label">Priority:</label>
-                <select class="form-select" aria-label="Default select example" id="project-priority" name="priority" value="{{old('priority')}}">
-                    <option selected></option>
-                    <option value="Alta">Alta</option>
-                    <option value="Media">Media</option>
-                    <option value="Bassa">Bassa</option>
-                  </select>
-            </div>
-            <div class="mb-3">
                 <label for="project-description" class="form-label">Description:</label>
                 <input type="text" class="form-control" id="project-description" name="description" value="{{old('description')}}">
             </div>

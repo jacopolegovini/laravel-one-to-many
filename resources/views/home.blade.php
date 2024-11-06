@@ -19,6 +19,6 @@
             </div>
         </div>
     </div>
-    <a href="/admin/tasks">Lista dei task</a>
+    <a href="/admin/projects">Project's List</a>
 </div>
 @endsection
