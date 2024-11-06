@@ -15,7 +15,6 @@ class Project extends Model
         "title",
         "author",
         "date",
-        "priority",
         "description"
     ];
 }

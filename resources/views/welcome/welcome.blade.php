@@ -53,21 +53,21 @@
                         </h1>
                         @else
                         <h1 class="text-center">
-                            Welcome in the general Task Manager
+                            Welcome in the general Project Manager
                         </h1>
                         @endif
                         <div class="task-to-do">
                             <div class="row">
                                 <div class="col-12">
                                     <h2 class="py-3 fw-bold text-center">
-                                        Task to do:
+                                        Project to do:
                                     </h2>
                                 </div>
                                 <div class="col-12">
                                     <div class="mb-3">
                                         @if (Auth::check())
                                         <a href="{{ route("admin.projects.create") }}" class="btn btn-primary btn-lg">
-                                            Create new task
+                                            Create new Project
                                         </a>
                                         @endif
                                     </div>
