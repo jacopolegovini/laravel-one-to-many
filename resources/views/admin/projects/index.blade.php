@@ -11,7 +11,7 @@
             <div class="col-12">
                 <div class="mb-3">
                     <a href="{{ route("admin.projects.create") }}" class="btn btn-primary btn-lg">
-                        Create new task
+                        Create new project
                     </a>
                 </div>
                 <table class="table table-hover table-striped">
