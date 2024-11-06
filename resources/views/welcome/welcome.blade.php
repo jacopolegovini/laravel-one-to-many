@@ -49,7 +49,7 @@
                     <div class="container">
                         @if (Auth::check())
                         <h1 class="text-center">
-                            Welcome in your Task Manager <strong>{{$users[0]->name}}</strong>
+                            Welcome in your Project Manager <strong>{{$users[0]->name}}</strong>
                         </h1>
                         @else
                         <h1 class="text-center">
@@ -66,7 +66,7 @@
                                 <div class="col-12">
                                     <div class="mb-3">
                                         @if (Auth::check())
-                                        <a href="{{ route("admin.tasks.create") }}" class="btn btn-primary btn-lg">
+                                        <a href="{{ route("admin.projects.create") }}" class="btn btn-primary btn-lg">
                                             Create new task
                                         </a>
                                         @endif
@@ -84,40 +84,40 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @forelse ( $tasks as $index => $task )
+                                            @forelse ( $projects as $index => $project )
                                             <tr>
                                                 <td>
                                                     <form action="" class="btn-group done" role="group" aria-label="Basic checkbox toggle button group">
-                                                        <input type="checkbox" class="btn-check" id="btncheck{{$task->id}}" autocomplete="off">
-                                                        <label class="btn btn-outline-primary" for="btncheck{{$task->id}}">Done</label>
+                                                        <input type="checkbox" class="btn-check" id="btncheck{{$project->id}}" autocomplete="off">
+                                                        <label class="btn btn-outline-primary" for="btncheck{{$project->id}}">Done</label>
                                                     </form>
                                                 </td>
                                                 <td>
-                                                    {{ $task->id }}
+                                                    {{ $project->id }}
                                                 </td>
                                                 <td>
-                                                    {{ $task->title }}
+                                                    {{ $project->title }}
                                                 </td>
                                                 <td>
-                                                    {{ $task->author }}
+                                                    {{ $project->author }}
                                                 </td>
                                                 <td>
-                                                    {{ $task->date }}
+                                                    {{ $project->date }}
                                                 </td>
                                                 <td>
-                                                    {{ $task->priority }}
+                                                    {{ $project->priority }}
                                                 </td>
                                                 <td>
-                                                    {{ $task->description }}
+                                                    {{ $project->description }}
                                                 </td>
                                                 <td>
-                                                    <a href="/admin/tasks/{{ $index + 1 }}" class="btn btn-sm btn-primary me-2">Show</a>
+                                                    <a href="/admin/projects/{{ $index + 1 }}" class="btn btn-sm btn-primary me-2">Show</a>
 
                                                     @if (Auth::check())
 
-                                                    <a href="{{ route("admin.tasks.edit", $task->id) }}"  class="btn btn-sm btn-success me-2">Edit</a>
+                                                    <a href="{{ route("admin.projects.edit", $project->id) }}"  class="btn btn-sm btn-success me-2">Edit</a>
 
-                                                    <form class="d-inline env-destroyer" action="{{ route("admin.tasks.delete", $task->id) }}" method="POST" custom-data-name="{{ $task->name }}" >
+                                                    <form class="d-inline env-destroyer" action="{{ route("admin.projects.delete", $project->id) }}" method="POST" custom-data-name="{{ $project->name }}" >
                                                         @method("DELETE")
                                                         @csrf
 
@@ -130,7 +130,7 @@
                                             </tr>
                                             @empty
                                             <tr>
-                                                <td colspan="6">No task are available at the moment, you are free to go!</td>
+                                                <td colspan="6">No project are available at the moment, you are free to go!</td>
                                             </tr>
                                             @endforelse
                                         </tbody>
@@ -138,9 +138,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="task-done">
+                        <div class="project-done">
                             <div class="row">
-                                <div class="col-12"><h2 class="py-3 fw-bold text-center">Task Done</h2></div>
+                                <div class="col-12"><h2 class="py-3 fw-bold text-center">Project Done</h2></div>
                                 <table class="table table-hover table-striped">
                                     <thead>
                                         <tr>
@@ -161,7 +161,7 @@
                         </div>
                     </div>
                     {{-- @if (Auth::check())
-                    <a class="btn btn-primary" href="/admin/tasks">Task's List</a>
+                    <a class="btn btn-primary" href="/admin/projects">Task's List</a>
                     @endif --}}
                 </div>
             </div>

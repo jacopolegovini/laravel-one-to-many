@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\TaskController as AdminTaskController;
+use App\Http\Controllers\Admin\ProjectController as AdminProjectController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\WelcomeController;
 
@@ -24,11 +24,11 @@ Auth::routes();
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::middleware("auth")->prefix("/admin")->name("admin.")->group(function () {
-    Route::get("/tasks", [AdminTaskController::class, "index"])->name("tasks.index");
-    Route::get("/tasks/create", [AdminTaskController::class, "create"])->name("tasks.create");
-    Route::post("/tasks", [AdminTaskController::class, "store"])->name("tasks.store");
-    Route::get("/tasks/{id}", [AdminTaskController::class, "show"])->name("tasks.show");
-    Route::get("/tasks/{id}/edit", [AdminTaskController::class, "edit"])->name("tasks.edit");
-    Route::put("/tasks/{id}", [AdminTaskController::class, "update"])->name("tasks.update");
-    Route::delete("/tasks/{id}", [AdminTaskController::class, "destroy"])->name("tasks.delete");
+    Route::get("/projects", [AdminProjectController::class, "index"])->name("projects.index");
+    Route::get("/projects/create", [AdminProjectController::class, "create"])->name("projects.create");
+    Route::post("/projects", [AdminProjectController::class, "store"])->name("projects.store");
+    Route::get("/projects/{id}", [AdminProjectController::class, "show"])->name("projects.show");
+    Route::get("/projects/{id}/edit", [AdminProjectController::class, "edit"])->name("projects.edit");
+    Route::put("/projects/{id}", [AdminProjectController::class, "update"])->name("projects.update");
+    Route::delete("/projects/{id}", [AdminProjectController::class, "destroy"])->name("projects.delete");
 });

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Task;
+use App\Models\Project;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -10,9 +10,9 @@ class WelcomeController extends Controller
 {
     public function index()
     {
-        $tasks = Task::all();
+        $projects = Project::all();
         $users = User::all();
 
-        return view('welcome.welcome', compact('tasks', 'users'));
+        return view('welcome.welcome', compact('projects', 'users'));
     }
 }

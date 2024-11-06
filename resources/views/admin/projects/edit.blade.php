@@ -11,37 +11,37 @@
         </ul>
     </div>
     @endif
-    <form action="{{route('admin.tasks.update', $tasks->id)}}" method="POST">
+    <form action="{{route('admin.projects.update', $projects->id)}}" method="POST">
         @csrf
         @method('PUT')
             <h1 class="mb-3">
-                Creating a new Task:
+                Creating a new Project:
             </h1>
             <div class="mb-3">
                 {{-- Implementato una validazione manuale per cancellare la risposta sbagliata e lasciare esclusivamente quelle corrette --}}
-                <label for="task-title" class="form-label">Titolo:</label>
-                <input type="text" class="form-control" id="task-title" name="title" value="{{$tasks->title}}">
+                <label for="project-title" class="form-label">Titolo:</label>
+                <input type="text" class="form-control" id="project-title" name="title" value="{{$projects->title}}">
             </div>
             <div class="mb-3">
-                <label for="task-author" class="form-label">Author:</label>
-                <input type="text" class="form-control" id="author" name="author" value="{{$tasks->author}}">
+                <label for="project-author" class="form-label">Author:</label>
+                <input type="text" class="form-control" id="author" name="author" value="{{$projects->author}}">
             </div>
             <div class="mb-3">
-                <label for="task-date" class="form-label">Date:</label>
-                <input type="text" class="form-control" id="date" name="date" value="{{$tasks->date}}">
+                <label for="project-date" class="form-label">Date:</label>
+                <input type="text" class="form-control" id="date" name="date" value="{{$projects->date}}">
             </div>
             <div class="mb-3">
-                <label for="task-priority" class="form-label">Priority:</label>
-                <select class="form-select" aria-label="Default select example" id="task-priority" name="priority" value="{{$tasks->priority}}">
-                    <option selected>{{$tasks->priority}}</option>
+                <label for="project-priority" class="form-label">Priority:</label>
+                <select class="form-select" aria-label="Default select example" id="project-priority" name="priority" value="{{$projects->priority}}">
+                    <option selected>{{$projects->priority}}</option>
                     <option value="Alta">Alta</option>
                     <option value="Media">Media</option>
                     <option value="Bassa">Bassa</option>
                   </select>
             </div>
             <div class="mb-3">
-                <label for="task-description" class="form-label">Description:</label>
-                <input type="text" class="form-control" id="task-description" name="description" value="{{$tasks->description}}">
+                <label for="project-description" class="form-label">Description:</label>
+                <input type="text" class="form-control" id="project-description" name="description" value="{{$projects->description}}">
             </div>
 
             <div class="mb-3 d-flex justify-content-center align-items-center">

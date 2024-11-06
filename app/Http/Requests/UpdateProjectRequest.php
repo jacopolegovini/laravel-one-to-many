@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreTaskRequest extends FormRequest
+class UpdateProjectRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -27,14 +27,6 @@ class StoreTaskRequest extends FormRequest
             'date' => ['required', 'date'],
             'priority' => ['required'],
             'description' => ['string']
-        ];
-    }
-
-    public function messages()
-    {
-        return [
-            'title.required' => 'Devi mettere un titolo.',
-            'title.min' => 'Il titolo deve avere come minimo tre caratteri.'
         ];
     }
 }
