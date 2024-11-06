@@ -24,7 +24,7 @@
             </div>
             <div class="mb-3">
                 <label for="project-type" class="form-label">Type:</label>
-                <select class="form-control" id="type" name="type" value="{{old('type')}}">
+                <select class="form-control" id="type_id" name="type_id" value="{{old('type')}}">
                     <option value=""></option>
                     @foreach ($types as $type)
                     <option value="{{$type->id}}">{{$type->type}}</option>
